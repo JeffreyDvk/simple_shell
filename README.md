@@ -1,36 +1,51 @@
-# simple_shell
+# Simple - Shell
 
-# A simple C shell project
+### Description
+Mini-Shell is a command line interpreter based on sh that brings to the table some of the basic features that sh offers.
 
-## Description
 
-This is a simple UNIX command interpreter that replicates functionalities of the simple shell (sh). Additional functions are also included. This program was written entirely in C as a milestone project for Alx-Holberton School.
+### Usage
+Works exactly like sh, does not support iteractive mode
+### Example Commands
+* `exit 100`
+ * `cd directory`
+ * `pwd`
+ * `ls -l`
 
-## Installation
+ ### Instalation
+ Clone the repository, then change current directory to simple-shell, and last but not least run `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
 
-Clone this repository into your working directory. Files should be compiled with GCC and the following flags: -Wall -Wextra -Werror -pedantic -Wno-format.
+ ### Files
 
-## Usage
+ | File | Description|
+ | ------ | ------ |
+ |parsing.c |function for parsing the path|
+ |errors.c| handle errors of the program|
+ |fork.c| creates a new process from the parent|
+ |signal_prompt.c| functions related to signal handling and prompt|
+ |runner.c|entry point|
+ |shell.h|header file with functions declarations |
+ |path.c| funcntions for handling the path|
+ |utils.c|utility functions for various operations|
+ |strings_utils.c|functions for handling strings|
+ |strings.c|functions for handling strings|
+ |validation.c|functions for validating a path|
 
-After compilation, the resulting program can run stand-alone, either in interactive or non-interactive mode.
+ | Special Features | Purpose|
+ | ------ | ------ |
+ | Ctrl + C| To prevent the killing of the simple-shell  |
+ | Ctrl + D|  exit the simple-shell |
 
-## Interactive Mode
+ ### Builtins commands
 
-In interactive mode, simply run the program and wait for the prompt to appear. From there, you can type commands freely, exiting with either the "exit" command or ctrl-D.
+ * `exit`
+ * `cd`
+ * `setenv`
+ * `env`
 
-## Non-Interactive Mode
+ ### System Calls / Functions Implemented
+ * `fork`,`execve`,`waitpid/wait`,`getline`,`strtok`,`exit`,`close`,`perror`
+ * `stat`,`access`,`strcat`,`strcpy`,`strlen`,`getenv`,`getcwd`,`signal`
 
-In non-interactive mode, echo your desired command and pipe it into the program like this:
-
-echo "ls" | ./shell
-In non-interactive mode, the program will exit after finishing your desired command(s).
-
-This is the man page which contains all functions and descriptions of all the functions used in this Simple shell project.
-
-## Features
-
-1. DIsplay a prompt and wait for the user to type a command. A command-line always ends with a new line.
-2. The prompt is displayed again each time a command has been executed.
-3. The command lines are simple, no semicolons, no pipes, no redirections, or any other advanced features.
-4. The command lines are made only of one word.No arguement will be passed to the programs.
-5.If an executable is not found the shell prints an error message and displayu the prompt again.
+ ### WARNING
+ Work still in progress, aliases and piping , redirection not available.
