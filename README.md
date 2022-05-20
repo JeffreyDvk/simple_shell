@@ -1,35 +1,36 @@
-<<<<<<< HEAD
 # simple_shell
-Custom shell implementation
-=======
-# SIMPLE_SHELL #
-Shell is a program that exposes the Operating System services to a user. The shell receives command inputs written from the the user’s keyboard and passes them to the system to execute them through the kernel. The kernel is usually loaded into a separate area of memory, which is protected from access by application software or other less critical parts of the operating system. It also verifies if the command inputs from the user are correct.
 
+# A simple C shell project
 
-## Synopsis ##
-The simple shell project is done in two teams by Asrat Asmelash Tsehaye, Mintesnot Bekele, Software Engineering students at ALX.
-In this project, one will find basic characteristics of the shell sysytem such as; Handling PATHS, implementing BUILT-INS and executing commands
+## Description
 
-## Description ##
-Simple Shell is a simple program which receives the keyboard commands and delivers them to the system to be executed. This shell is developed in the programming language C.  some built-in commands implement: exit, env, cd.
-## COMPILATION ##
-This project was compiled using gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+This is a simple UNIX command interpreter that replicates functionalities of the simple shell (sh). Additional functions are also included. This program was written entirely in C as a milestone project for Alx-Holberton School.
 
-## allowed functions used ##
+## Installation
 
-~ access (man 2 access)
-~ chdir (man 2 chdir)
-~ close (man 2 close)
-~ closedir (man 3 closedir)
-~ execve (man 2 execve)
-~ exit (man 3 exit)
-~ _exit (man 2 _exit)
-~ fflush (man 3 fflush)
-~ fork (man 2 fork)
-~ free (man 3 free)
-~ getcwd (man 3 getcwd)
-~ getline (man 3 getline)
-~ getpid (man 2 getpid)
-      
-      
-   AUTHORS
+Clone this repository into your working directory. Files should be compiled with GCC and the following flags: -Wall -Wextra -Werror -pedantic -Wno-format.
+
+## Usage
+
+After compilation, the resulting program can run stand-alone, either in interactive or non-interactive mode.
+
+## Interactive Mode
+
+In interactive mode, simply run the program and wait for the prompt to appear. From there, you can type commands freely, exiting with either the "exit" command or ctrl-D.
+
+## Non-Interactive Mode
+
+In non-interactive mode, echo your desired command and pipe it into the program like this:
+
+echo "ls" | ./shell
+In non-interactive mode, the program will exit after finishing your desired command(s).
+
+This is the man page which contains all functions and descriptions of all the functions used in this Simple shell project.
+
+## Features
+
+1. DIsplay a prompt and wait for the user to type a command. A command-line always ends with a new line.
+2. The prompt is displayed again each time a command has been executed.
+3. The command lines are simple, no semicolons, no pipes, no redirections, or any other advanced features.
+4. The command lines are made only of one word.No arguement will be passed to the programs.
+5.If an executable is not found the shell prints an error message and displayu the prompt again.
